@@ -1,13 +1,14 @@
-"use client"
 
+"use client"
+  
 import Link from 'next/link';
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Input from "./product/input";
-import Button from "./product/button";
+import Input from "../product/input";
+import Button from "../product/button";  
 
-export default function Signup() {
+export default function Login() {
 
   const {
     register,
@@ -31,19 +32,9 @@ export default function Signup() {
         <form onSubmit={handleSubmit(onSubmit)} className="block max-w-sm p-10 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
           <div>
             <div className="px-10">
-              <div className="text-3xl text-blue-200 hover:text-blue-400 font-extrabold">Signup</div>
+              <div className="text-3xl text-blue-200 hover:text-blue-400 font-extrabold">Login</div>
             </div>
             <div className="pt-2">
-              <Input 
-              label='Username'
-              placeholder="Enter your name"
-              type='Username'
-              {...register("Username", { required: "Username is required" })}
-              />
-              {errors.Username && (
-                <p className="text-red-500 text-sm">{errors.Username.message as string}</p>
-              )}
-              
               <Input
                 label="Email"
                 placeholder="Enter your email"
@@ -68,19 +59,19 @@ export default function Signup() {
 
               <Button
                 type="submit"
-                value="Signup"
+                value="Login"
                 color="bg-gray-800"
                 className="mt-8 w-full me-2 mb-2" />
 
-              <div className="flex gap-2 items-center">
-              <p className="text-blue-500 text-xs pt-2">I have all ready signup</p>  
-              <Link className="text-black text-sm pt-2" href="/auth">Login</Link>
+              <div className='flex gap-2'>
+              <p className="text-blue-500 text-xs pt-2">do not have account</p>  
+              <Link className='text-black text-sm pt-2' href="/">Signup</Link>
               </div>
             </div>
           </div>
         </form>
       </div>
-    </div>
+    </div>  
   );
 }
 
