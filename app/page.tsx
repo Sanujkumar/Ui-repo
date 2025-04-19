@@ -25,8 +25,8 @@ export default function Signup() {
     }
   };
 
-  return (
-    <div className="h-screen flex justify-center flex-col">
+  return (  
+    <div className="h-screen flex justify-center flex-col bg-teal-50">
       <div className=" flex justify-center">
         <form onSubmit={handleSubmit(onSubmit)} className="block max-w-sm p-10 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100">
           <div>
